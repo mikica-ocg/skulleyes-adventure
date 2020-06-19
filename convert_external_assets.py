@@ -25,6 +25,9 @@ def main():
 
     for script_path in get_blender_driver_scripts():
         run_blender_driver(DEFAULT_BLENDER_PATH, str(script_path))
+
+    print("Done, clearing temp assets")
+    clear_temp_assets()
     
     pass
 

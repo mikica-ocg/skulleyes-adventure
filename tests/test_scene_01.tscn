@@ -1,0 +1,739 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://converted_assets/tt_rts/models/buildings/library.gltf" type="PackedScene" id=1]
+[ext_resource path="res://converted_assets/tt_rts/models/buildings/house.gltf" type="PackedScene" id=2]
+[ext_resource path="res://converted_assets/tt_rts/models/units/tt_rts_character_customizable.gltf" type="PackedScene" id=3]
+[ext_resource path="res://converted_assets/tt_rts/models/buildings/market.gltf" type="PackedScene" id=4]
+[ext_resource path="res://converted_assets/tt_rts/models/buildings/workshop.gltf" type="PackedScene" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="library" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.234565, 0, -0.9721, 0, 1, 0, 0.9721, 0, 0.234565, 0, 0, 17 )
+
+[node name="market" parent="." instance=ExtResource( 4 )]
+
+[node name="house" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.607459, 0, -0.794351, 0, 1, 0, 0.794351, 0, -0.607459, -24.657, 0, -0.958134 )
+
+[node name="workshop" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -16 )
+
+[node name="tt_rts_character_customizable" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.607459, 0, -0.794351, 0, 1, 0, 0.794351, 0, -0.607459, -12.5568, 0, 7.75589 )
+
+[node name="Skeleton" parent="tt_rts_character_customizable/Bip001" index="1"]
+bones/6/bound_children = [ NodePath("BoneAttachment"), NodePath("BoneAttachment 2"), NodePath("BoneAttachment 3"), NodePath("BoneAttachment 4"), NodePath("BoneAttachment 5"), NodePath("BoneAttachment 6"), NodePath("BoneAttachment 7") ]
+bones/7/bound_children = [ NodePath("BoneAttachment 8"), NodePath("BoneAttachment 9"), NodePath("BoneAttachment 10"), NodePath("BoneAttachment 11"), NodePath("BoneAttachment 12"), NodePath("BoneAttachment 13"), NodePath("BoneAttachment 14"), NodePath("BoneAttachment 15"), NodePath("BoneAttachment 16"), NodePath("BoneAttachment 17"), NodePath("BoneAttachment 18"), NodePath("BoneAttachment 19"), NodePath("BoneAttachment 20"), NodePath("BoneAttachment 21"), NodePath("BoneAttachment 22"), NodePath("BoneAttachment 23"), NodePath("BoneAttachment 24"), NodePath("BoneAttachment 25"), NodePath("BoneAttachment 26"), NodePath("BoneAttachment 27"), NodePath("BoneAttachment 28"), NodePath("BoneAttachment 29"), NodePath("BoneAttachment 30") ]
+bones/12/bound_children = [ NodePath("BoneAttachment 31"), NodePath("BoneAttachment 32"), NodePath("BoneAttachment 33"), NodePath("BoneAttachment 34"), NodePath("BoneAttachment 35"), NodePath("BoneAttachment 36"), NodePath("BoneAttachment 37"), NodePath("BoneAttachment 38"), NodePath("BoneAttachment 39"), NodePath("BoneAttachment 40"), NodePath("BoneAttachment 41"), NodePath("BoneAttachment 42"), NodePath("BoneAttachment 43"), NodePath("BoneAttachment 44"), NodePath("BoneAttachment 45"), NodePath("BoneAttachment 46"), NodePath("BoneAttachment 47"), NodePath("BoneAttachment 48"), NodePath("BoneAttachment 49"), NodePath("BoneAttachment 50"), NodePath("BoneAttachment 51"), NodePath("BoneAttachment 52"), NodePath("BoneAttachment 53"), NodePath("BoneAttachment 54"), NodePath("BoneAttachment 55"), NodePath("BoneAttachment 56"), NodePath("BoneAttachment 57"), NodePath("BoneAttachment 58"), NodePath("BoneAttachment 59"), NodePath("BoneAttachment 60"), NodePath("BoneAttachment 61"), NodePath("BoneAttachment 62"), NodePath("BoneAttachment 63"), NodePath("BoneAttachment 64"), NodePath("BoneAttachment 65"), NodePath("BoneAttachment 66"), NodePath("BoneAttachment 67"), NodePath("BoneAttachment 68"), NodePath("BoneAttachment 69"), NodePath("BoneAttachment 70"), NodePath("BoneAttachment 71") ]
+bones/16/bound_children = [ NodePath("BoneAttachment 72"), NodePath("BoneAttachment 73"), NodePath("BoneAttachment 74"), NodePath("BoneAttachment 75"), NodePath("BoneAttachment 76"), NodePath("BoneAttachment 77"), NodePath("BoneAttachment 78"), NodePath("BoneAttachment 79"), NodePath("BoneAttachment 80"), NodePath("BoneAttachment 81"), NodePath("BoneAttachment 82"), NodePath("BoneAttachment 83"), NodePath("BoneAttachment 84"), NodePath("BoneAttachment 85"), NodePath("BoneAttachment 86"), NodePath("BoneAttachment 87"), NodePath("BoneAttachment 88"), NodePath("BoneAttachment 89"), NodePath("BoneAttachment 90"), NodePath("BoneAttachment 91"), NodePath("BoneAttachment 92"), NodePath("BoneAttachment 93"), NodePath("BoneAttachment 94"), NodePath("BoneAttachment 95"), NodePath("BoneAttachment 96"), NodePath("BoneAttachment 97"), NodePath("BoneAttachment 98"), NodePath("BoneAttachment 99"), NodePath("BoneAttachment 100"), NodePath("BoneAttachment 101"), NodePath("BoneAttachment 102"), NodePath("BoneAttachment 103"), NodePath("BoneAttachment 104"), NodePath("BoneAttachment 105"), NodePath("BoneAttachment 106"), NodePath("BoneAttachment 107"), NodePath("BoneAttachment 108"), NodePath("BoneAttachment 109"), NodePath("BoneAttachment 110"), NodePath("BoneAttachment 111"), NodePath("BoneAttachment 112"), NodePath("BoneAttachment 113"), NodePath("BoneAttachment 114"), NodePath("BoneAttachment 115"), NodePath("BoneAttachment 116"), NodePath("BoneAttachment 117"), NodePath("BoneAttachment 118"), NodePath("BoneAttachment 119"), NodePath("BoneAttachment 120"), NodePath("BoneAttachment 121"), NodePath("BoneAttachment 122"), NodePath("BoneAttachment 123"), NodePath("BoneAttachment 124"), NodePath("BoneAttachment 125"), NodePath("BoneAttachment 126"), NodePath("BoneAttachment 127"), NodePath("BoneAttachment 128"), NodePath("BoneAttachment 129"), NodePath("BoneAttachment 130"), NodePath("BoneAttachment 131"), NodePath("BoneAttachment 132"), NodePath("BoneAttachment 133"), NodePath("BoneAttachment 134"), NodePath("BoneAttachment 135"), NodePath("BoneAttachment 136"), NodePath("BoneAttachment 137"), NodePath("BoneAttachment 138"), NodePath("BoneAttachment 139"), NodePath("BoneAttachment 140"), NodePath("BoneAttachment 141"), NodePath("BoneAttachment 142") ]
+bones/17/bound_children = [ NodePath("BoneAttachment 143"), NodePath("BoneAttachment 144") ]
+
+[node name="BoneAttachment" parent="tt_rts_character_customizable/Bip001/Skeleton" index="0"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 2" parent="tt_rts_character_customizable/Bip001/Skeleton" index="1"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 3" parent="tt_rts_character_customizable/Bip001/Skeleton" index="2"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 4" parent="tt_rts_character_customizable/Bip001/Skeleton" index="3"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 5" parent="tt_rts_character_customizable/Bip001/Skeleton" index="4"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 6" parent="tt_rts_character_customizable/Bip001/Skeleton" index="5"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 7" parent="tt_rts_character_customizable/Bip001/Skeleton" index="6"]
+transform = Transform( 0.995241, -0.0166013, 0.0960165, 0.0560979, -0.708079, -0.703901, 0.079673, 0.705938, -0.703778, 5.10283, 4.76087, -23.2677 )
+visible = false
+
+[node name="BoneAttachment 8" parent="tt_rts_character_customizable/Bip001/Skeleton" index="7"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 9" parent="tt_rts_character_customizable/Bip001/Skeleton" index="8"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 10" parent="tt_rts_character_customizable/Bip001/Skeleton" index="9"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 11" parent="tt_rts_character_customizable/Bip001/Skeleton" index="10"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 12" parent="tt_rts_character_customizable/Bip001/Skeleton" index="11"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 13" parent="tt_rts_character_customizable/Bip001/Skeleton" index="12"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 14" parent="tt_rts_character_customizable/Bip001/Skeleton" index="13"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 15" parent="tt_rts_character_customizable/Bip001/Skeleton" index="14"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 16" parent="tt_rts_character_customizable/Bip001/Skeleton" index="15"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 17" parent="tt_rts_character_customizable/Bip001/Skeleton" index="16"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 18" parent="tt_rts_character_customizable/Bip001/Skeleton" index="17"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 19" parent="tt_rts_character_customizable/Bip001/Skeleton" index="18"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 20" parent="tt_rts_character_customizable/Bip001/Skeleton" index="19"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 21" parent="tt_rts_character_customizable/Bip001/Skeleton" index="20"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 22" parent="tt_rts_character_customizable/Bip001/Skeleton" index="21"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 23" parent="tt_rts_character_customizable/Bip001/Skeleton" index="22"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 24" parent="tt_rts_character_customizable/Bip001/Skeleton" index="23"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 25" parent="tt_rts_character_customizable/Bip001/Skeleton" index="24"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 26" parent="tt_rts_character_customizable/Bip001/Skeleton" index="25"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 27" parent="tt_rts_character_customizable/Bip001/Skeleton" index="26"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 28" parent="tt_rts_character_customizable/Bip001/Skeleton" index="27"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+
+[node name="BoneAttachment 29" parent="tt_rts_character_customizable/Bip001/Skeleton" index="28"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 30" parent="tt_rts_character_customizable/Bip001/Skeleton" index="29"]
+transform = Transform( -0.0255224, -0.0940429, 0.99524, 0.939219, 0.338705, 0.0560909, -0.342368, 0.936181, 0.0796824, 4.3948, 4.74962, -27.023 )
+visible = false
+
+[node name="BoneAttachment 31" parent="tt_rts_character_customizable/Bip001/Skeleton" index="30"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 32" parent="tt_rts_character_customizable/Bip001/Skeleton" index="31"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 33" parent="tt_rts_character_customizable/Bip001/Skeleton" index="32"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 34" parent="tt_rts_character_customizable/Bip001/Skeleton" index="33"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 35" parent="tt_rts_character_customizable/Bip001/Skeleton" index="34"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 36" parent="tt_rts_character_customizable/Bip001/Skeleton" index="35"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 37" parent="tt_rts_character_customizable/Bip001/Skeleton" index="36"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 38" parent="tt_rts_character_customizable/Bip001/Skeleton" index="37"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 39" parent="tt_rts_character_customizable/Bip001/Skeleton" index="38"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 40" parent="tt_rts_character_customizable/Bip001/Skeleton" index="39"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 41" parent="tt_rts_character_customizable/Bip001/Skeleton" index="40"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 42" parent="tt_rts_character_customizable/Bip001/Skeleton" index="41"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 43" parent="tt_rts_character_customizable/Bip001/Skeleton" index="42"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 44" parent="tt_rts_character_customizable/Bip001/Skeleton" index="43"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 45" parent="tt_rts_character_customizable/Bip001/Skeleton" index="44"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 46" parent="tt_rts_character_customizable/Bip001/Skeleton" index="45"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 47" parent="tt_rts_character_customizable/Bip001/Skeleton" index="46"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+
+[node name="BoneAttachment 48" parent="tt_rts_character_customizable/Bip001/Skeleton" index="47"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 49" parent="tt_rts_character_customizable/Bip001/Skeleton" index="48"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 50" parent="tt_rts_character_customizable/Bip001/Skeleton" index="49"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 51" parent="tt_rts_character_customizable/Bip001/Skeleton" index="50"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 52" parent="tt_rts_character_customizable/Bip001/Skeleton" index="51"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 53" parent="tt_rts_character_customizable/Bip001/Skeleton" index="52"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 54" parent="tt_rts_character_customizable/Bip001/Skeleton" index="53"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 55" parent="tt_rts_character_customizable/Bip001/Skeleton" index="54"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 56" parent="tt_rts_character_customizable/Bip001/Skeleton" index="55"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 57" parent="tt_rts_character_customizable/Bip001/Skeleton" index="56"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 58" parent="tt_rts_character_customizable/Bip001/Skeleton" index="57"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 59" parent="tt_rts_character_customizable/Bip001/Skeleton" index="58"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 60" parent="tt_rts_character_customizable/Bip001/Skeleton" index="59"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 61" parent="tt_rts_character_customizable/Bip001/Skeleton" index="60"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 62" parent="tt_rts_character_customizable/Bip001/Skeleton" index="61"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 63" parent="tt_rts_character_customizable/Bip001/Skeleton" index="62"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 64" parent="tt_rts_character_customizable/Bip001/Skeleton" index="63"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 65" parent="tt_rts_character_customizable/Bip001/Skeleton" index="64"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 66" parent="tt_rts_character_customizable/Bip001/Skeleton" index="65"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 67" parent="tt_rts_character_customizable/Bip001/Skeleton" index="66"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 68" parent="tt_rts_character_customizable/Bip001/Skeleton" index="67"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 69" parent="tt_rts_character_customizable/Bip001/Skeleton" index="68"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 70" parent="tt_rts_character_customizable/Bip001/Skeleton" index="69"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 71" parent="tt_rts_character_customizable/Bip001/Skeleton" index="70"]
+transform = Transform( 0.99524, 0.0166439, 0.0960233, 0.056068, 0.708113, -0.703878, -0.0797097, 0.705903, 0.703817, 5.10252, 4.76098, 23.2619 )
+visible = false
+
+[node name="BoneAttachment 72" parent="tt_rts_character_customizable/Bip001/Skeleton" index="71"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 73" parent="tt_rts_character_customizable/Bip001/Skeleton" index="72"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 74" parent="tt_rts_character_customizable/Bip001/Skeleton" index="73"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 75" parent="tt_rts_character_customizable/Bip001/Skeleton" index="74"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 76" parent="tt_rts_character_customizable/Bip001/Skeleton" index="75"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 77" parent="tt_rts_character_customizable/Bip001/Skeleton" index="76"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 78" parent="tt_rts_character_customizable/Bip001/Skeleton" index="77"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 79" parent="tt_rts_character_customizable/Bip001/Skeleton" index="78"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 80" parent="tt_rts_character_customizable/Bip001/Skeleton" index="79"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 81" parent="tt_rts_character_customizable/Bip001/Skeleton" index="80"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 82" parent="tt_rts_character_customizable/Bip001/Skeleton" index="81"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 83" parent="tt_rts_character_customizable/Bip001/Skeleton" index="82"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 84" parent="tt_rts_character_customizable/Bip001/Skeleton" index="83"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 85" parent="tt_rts_character_customizable/Bip001/Skeleton" index="84"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 86" parent="tt_rts_character_customizable/Bip001/Skeleton" index="85"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 87" parent="tt_rts_character_customizable/Bip001/Skeleton" index="86"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 88" parent="tt_rts_character_customizable/Bip001/Skeleton" index="87"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 89" parent="tt_rts_character_customizable/Bip001/Skeleton" index="88"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 90" parent="tt_rts_character_customizable/Bip001/Skeleton" index="89"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 91" parent="tt_rts_character_customizable/Bip001/Skeleton" index="90"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 92" parent="tt_rts_character_customizable/Bip001/Skeleton" index="91"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 93" parent="tt_rts_character_customizable/Bip001/Skeleton" index="92"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 94" parent="tt_rts_character_customizable/Bip001/Skeleton" index="93"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 95" parent="tt_rts_character_customizable/Bip001/Skeleton" index="94"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 96" parent="tt_rts_character_customizable/Bip001/Skeleton" index="95"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 97" parent="tt_rts_character_customizable/Bip001/Skeleton" index="96"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 98" parent="tt_rts_character_customizable/Bip001/Skeleton" index="97"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 99" parent="tt_rts_character_customizable/Bip001/Skeleton" index="98"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 100" parent="tt_rts_character_customizable/Bip001/Skeleton" index="99"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 101" parent="tt_rts_character_customizable/Bip001/Skeleton" index="100"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 102" parent="tt_rts_character_customizable/Bip001/Skeleton" index="101"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 103" parent="tt_rts_character_customizable/Bip001/Skeleton" index="102"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 104" parent="tt_rts_character_customizable/Bip001/Skeleton" index="103"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 105" parent="tt_rts_character_customizable/Bip001/Skeleton" index="104"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 106" parent="tt_rts_character_customizable/Bip001/Skeleton" index="105"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 107" parent="tt_rts_character_customizable/Bip001/Skeleton" index="106"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 108" parent="tt_rts_character_customizable/Bip001/Skeleton" index="107"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 109" parent="tt_rts_character_customizable/Bip001/Skeleton" index="108"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 110" parent="tt_rts_character_customizable/Bip001/Skeleton" index="109"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 111" parent="tt_rts_character_customizable/Bip001/Skeleton" index="110"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 112" parent="tt_rts_character_customizable/Bip001/Skeleton" index="111"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 113" parent="tt_rts_character_customizable/Bip001/Skeleton" index="112"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 114" parent="tt_rts_character_customizable/Bip001/Skeleton" index="113"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 115" parent="tt_rts_character_customizable/Bip001/Skeleton" index="114"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 116" parent="tt_rts_character_customizable/Bip001/Skeleton" index="115"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 117" parent="tt_rts_character_customizable/Bip001/Skeleton" index="116"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 118" parent="tt_rts_character_customizable/Bip001/Skeleton" index="117"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 119" parent="tt_rts_character_customizable/Bip001/Skeleton" index="118"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 120" parent="tt_rts_character_customizable/Bip001/Skeleton" index="119"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 121" parent="tt_rts_character_customizable/Bip001/Skeleton" index="120"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 122" parent="tt_rts_character_customizable/Bip001/Skeleton" index="121"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 123" parent="tt_rts_character_customizable/Bip001/Skeleton" index="122"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 124" parent="tt_rts_character_customizable/Bip001/Skeleton" index="123"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 125" parent="tt_rts_character_customizable/Bip001/Skeleton" index="124"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 126" parent="tt_rts_character_customizable/Bip001/Skeleton" index="125"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 127" parent="tt_rts_character_customizable/Bip001/Skeleton" index="126"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 128" parent="tt_rts_character_customizable/Bip001/Skeleton" index="127"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 129" parent="tt_rts_character_customizable/Bip001/Skeleton" index="128"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 130" parent="tt_rts_character_customizable/Bip001/Skeleton" index="129"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 131" parent="tt_rts_character_customizable/Bip001/Skeleton" index="130"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 132" parent="tt_rts_character_customizable/Bip001/Skeleton" index="131"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 133" parent="tt_rts_character_customizable/Bip001/Skeleton" index="132"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 134" parent="tt_rts_character_customizable/Bip001/Skeleton" index="133"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 135" parent="tt_rts_character_customizable/Bip001/Skeleton" index="134"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 136" parent="tt_rts_character_customizable/Bip001/Skeleton" index="135"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 137" parent="tt_rts_character_customizable/Bip001/Skeleton" index="136"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 138" parent="tt_rts_character_customizable/Bip001/Skeleton" index="137"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 139" parent="tt_rts_character_customizable/Bip001/Skeleton" index="138"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 140" parent="tt_rts_character_customizable/Bip001/Skeleton" index="139"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+
+[node name="BoneAttachment 141" parent="tt_rts_character_customizable/Bip001/Skeleton" index="140"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 142" parent="tt_rts_character_customizable/Bip001/Skeleton" index="141"]
+transform = Transform( 4.11375e-06, -1, 1.44615e-06, -2.09564e-07, 1.50564e-06, 1, -1, -4.11375e-06, -2.0956e-07, 2.52888, 30.2721, -4.65186e-05 )
+visible = false
+
+[node name="BoneAttachment 143" parent="tt_rts_character_customizable/Bip001/Skeleton" index="142"]
+transform = Transform( -0.96923, -1.52202e-06, 0.246155, 0.246155, 1.23196e-06, 0.96923, -1.76888e-06, 1, -8.02992e-07, -8.79511, 13.7948, -3.01549e-05 )
+visible = false
+
+[node name="BoneAttachment 144" parent="tt_rts_character_customizable/Bip001/Skeleton" index="143"]
+transform = Transform( -0.96923, -1.52202e-06, 0.246155, 0.246155, 1.23196e-06, 0.96923, -1.76888e-06, 1, -8.02992e-07, -8.79511, 13.7948, -3.01549e-05 )
+
+[node name="Body_01a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="144"]
+visible = false
+
+[node name="Body_01b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="145"]
+visible = false
+
+[node name="Body_01c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="146"]
+visible = false
+
+[node name="Body_02a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="147"]
+visible = false
+
+[node name="Body_02b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="148"]
+visible = false
+
+[node name="Body_02c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="149"]
+visible = false
+
+[node name="Body_02d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="150"]
+visible = false
+
+[node name="Body_03a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="151"]
+visible = false
+
+[node name="Body_03b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="152"]
+visible = false
+
+[node name="Body_04a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="153"]
+visible = false
+
+[node name="Body_04b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="154"]
+visible = false
+
+[node name="Body_04c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="155"]
+visible = false
+
+[node name="Body_04d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="156"]
+visible = false
+
+[node name="Body_04e" parent="tt_rts_character_customizable/Bip001/Skeleton" index="157"]
+visible = false
+
+[node name="Body_05a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="158"]
+visible = false
+
+[node name="Body_05b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="159"]
+visible = false
+
+[node name="Body_05c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="160"]
+visible = false
+
+[node name="Body_05d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="161"]
+visible = false
+
+[node name="Body_05e" parent="tt_rts_character_customizable/Bip001/Skeleton" index="162"]
+visible = false
+
+[node name="Body_06a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="163"]
+visible = false
+
+[node name="Body_06b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="164"]
+visible = false
+
+[node name="Body_06c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="165"]
+visible = false
+
+[node name="Body_06d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="166"]
+visible = false
+
+[node name="Body_07a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="167"]
+visible = false
+
+[node name="Body_07b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="168"]
+visible = false
+
+[node name="Body_07c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="169"]
+visible = false
+
+[node name="Body_08a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="170"]
+visible = false
+
+[node name="Body_08b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="171"]
+visible = false
+
+[node name="Body_09c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="172"]
+visible = false
+
+[node name="Body_09d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="173"]
+visible = false
+
+[node name="Body_10b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="175"]
+visible = false
+
+[node name="Body_10c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="176"]
+visible = false
+
+[node name="Body_10d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="177"]
+visible = false
+
+[node name="Body_11a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="178"]
+visible = false
+
+[node name="Body_11b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="179"]
+visible = false
+
+[node name="Body_11c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="180"]
+visible = false
+
+[node name="Body_12a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="181"]
+visible = false
+
+[node name="Body_12b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="182"]
+visible = false
+
+[node name="Body_12c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="183"]
+visible = false
+
+[node name="Body_12d" parent="tt_rts_character_customizable/Bip001/Skeleton" index="184"]
+visible = false
+
+[node name="Body_12e" parent="tt_rts_character_customizable/Bip001/Skeleton" index="185"]
+visible = false
+
+[node name="Body_13a" parent="tt_rts_character_customizable/Bip001/Skeleton" index="186"]
+visible = false
+
+[node name="Body_13b" parent="tt_rts_character_customizable/Bip001/Skeleton" index="187"]
+visible = false
+
+[node name="Body_13c" parent="tt_rts_character_customizable/Bip001/Skeleton" index="188"]
+visible = false
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.888128, 0.232917, -0.396204, 0, 0.862072, 0.506786, 0.459595, -0.450091, 0.76563, -19.8451, 5.33204, 17 )
+
+[editable path="tt_rts_character_customizable"]
