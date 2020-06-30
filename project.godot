@@ -10,6 +10,36 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
+"class": "Edge",
+"language": "GDScript",
+"path": "res://game/hex_grid/model/edge.gd"
+}, {
+"base": "Reference",
+"class": "Hex",
+"language": "GDScript",
+"path": "res://game/hex_grid/model/hex.gd"
+}, {
+"base": "Reference",
+"class": "HexBuilder",
+"language": "GDScript",
+"path": "res://game/hex_grid/model/hex_builder.gd"
+}, {
+"base": "Reference",
+"class": "HexGrid",
+"language": "GDScript",
+"path": "res://game/hex_grid/model/grid.gd"
+}, {
+"base": "Reference",
+"class": "HexGridBuilder",
+"language": "GDScript",
+"path": "res://game/hex_grid/model/hex_grid_builder.gd"
+}, {
+"base": "Node2D",
+"class": "HexVisualizer",
+"language": "GDScript",
+"path": "res://game/hex_grid/debug/hex_visualizer.gd"
+}, {
+"base": "Reference",
 "class": "WAT",
 "language": "GDScript",
 "path": "res://addons/WAT/namespace.gd"
@@ -20,6 +50,12 @@ _global_script_classes=[ {
 "path": "res://addons/WAT/core/test/test.gd"
 } ]
 _global_script_class_icons={
+"Edge": "",
+"Hex": "",
+"HexBuilder": "",
+"HexGrid": "",
+"HexGridBuilder": "",
+"HexVisualizer": "",
 "WAT": "",
 "WATTest": ""
 }

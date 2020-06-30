@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/hex_grid/debug/hex_visualizer.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 200, 150 )
+script = ExtResource( 1 )
+half_width = 4
+max_width_count = 5
+max_height_count = 3
