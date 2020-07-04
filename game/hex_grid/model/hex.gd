@@ -1,6 +1,9 @@
 class_name Hex
 
 var _coords: Vector3
+
+var debug_str: String = ''
+
 const SQRT3 = sqrt(3)
 
 enum Direction { N, NE, SE, S, SW, NW }
@@ -11,16 +14,35 @@ func _init(cube_coords):
 func get_cube_coords():
 	return Vector3(_coords.x, _coords.y, _coords.z)
 	
+	
 func get_even_row_coords():
 	return cube_to_even_row_coords(_coords)
 	
+	
 func get_normalized_2d_pos():
-	var x = 1.5 * _coords.x
-	var y = SQRT3 * (_coords.x / 2 + _coords.z)
+	var x = 1.5 * _coords.x + 1 # offset to center
+	var y = SQRT3 * (_coords.x / 2 + _coords.z) + SQRT3 # offset to center
 	
 	return Vector2(x, y)
 	
-func get_adjacent_hex(direction):
+	
+func get_normalized_2d_edges() -> Array:
+	var width_extent = 0.5
+	var height_extent = SQRT3 / 2.0
+	
+	var pos_offset = get_normalized_2d_pos()
+	
+	return [
+		Vector2(-width_extent, -height_extent) + pos_offset,
+		Vector2(width_extent, -height_extent) + pos_offset,
+		Vector2(2 * width_extent, 0) + pos_offset,
+		Vector2(width_extent, height_extent) + pos_offset,
+		Vector2(-width_extent, height_extent) + pos_offset,
+		Vector2(-2 * width_extent, 0) + pos_offset
+	]
+	
+	
+func get_adjacent_cube_coords(direction) -> Vector3:
 	return _coords + adjacent_offsets[direction]
 	
 func get_adjacent_hex_offset(direction):
@@ -39,11 +61,16 @@ const adjacent_offsets = [
 	Vector3(-1, +1, 0)
 ]
 
+static func axial_to_cube_coords(q: float, r: float) -> Vector3:
+	return Vector3(q, -q - r, r)
+
+
 static func cube_to_even_row_coords(coords: Vector3) -> Vector2:
 	var col = coords.x
 	var row = coords.z + (coords.x + (int(coords.x) & 1)) / 2
 	
-	return Vector2(row, col)
+	return Vector2(col, row)
+
 
 static func even_row_to_cube_coords(row: int, col: int):
 	var x = col
@@ -51,4 +78,22 @@ static func even_row_to_cube_coords(row: int, col: int):
 	var y = -x - z
 	
 	return Vector3(x, y, z)
+	
 
+static func round_cube_coords(cube: Vector3) -> Vector3:
+	var rx = round(cube.x)
+	var ry = round(cube.y)
+	var rz = round(cube.z)
+	
+	var x_diff = abs(rx - cube.x)
+	var y_diff = abs(ry - cube.y)
+	var z_diff = abs(rz - cube.z)
+	
+	if x_diff > y_diff and x_diff > z_diff:
+		rx = -ry - rz
+	elif y_diff > z_diff:
+		ry = -rx - rz
+	else:
+		rz = -rx - ry
+		
+	return Vector3(rx, ry, rz)
