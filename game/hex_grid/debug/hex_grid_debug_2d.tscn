@@ -1,12 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://game/hex_grid/debug/hex_visualizer.gd" type="Script" id=1]
+[ext_resource path="res://game/hex_grid/debug/keyboard_hex_navigator.gd" type="Script" id=2]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="HexVisualizer" type="Node2D" parent="."]
 position = Vector2( 200, 150 )
 script = ExtResource( 1 )
-half_width = 4
+half_width = 16
 max_width_count = 5
-max_height_count = 3
+debug_label_path = NodePath("../HexVisualizerLabel")
+
+[node name="KeyboardHexNavigator" type="Node2D" parent="HexVisualizer"]
+position = Vector2( 1.52588e-05, 0 )
+script = ExtResource( 2 )
+
+[node name="Indicator" type="Polygon2D" parent="HexVisualizer/KeyboardHexNavigator"]
+modulate = Color( 0.411765, 0.0980392, 0.403922, 0.498039 )
+polygon = PoolVector2Array( -8, 0, 0, -8, 8, 0, 0, 8 )
+
+[node name="Label" type="Label" parent="HexVisualizer/KeyboardHexNavigator"]
+margin_left = -192.0
+margin_top = 434.0
+margin_right = -144.0
+margin_bottom = 450.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HexVisualizerLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 984.0
+margin_top = 584.0
+margin_right = 1024.0
+margin_bottom = 598.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Test text"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

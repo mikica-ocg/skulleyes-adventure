@@ -8,6 +8,8 @@ export(int) var half_width = 24
 export(int) var max_width_count = 7
 export(int) var max_height_count = 7
 
+export(NodePath) var debug_label_path
+onready var debug_label = get_node(debug_label_path) as Label
 
 var selected: Hex = null
 
@@ -24,6 +26,8 @@ func _input(event):
 		if hex != selected:
 			selected = hex
 			update()
+		
+		debug_label.text = "Mouse pos: " + str(local_mouse_pos)
 		
 		pass
 	pass
