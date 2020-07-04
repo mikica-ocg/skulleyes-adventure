@@ -36,8 +36,8 @@ func normalized_size() -> Vector2:
 	if _hexes == null or _hexes.size() == 0:
 		return Vector2()
 	
-	var height = _hexes.size()
-	var width = 0.75 * _hexes[0].size() + 0.25
+	var height = _hexes.size() * SQRT_3
+	var width = 1.5 * _hexes[0].size() + 0.5
 	
 	return Vector2(width, height)
 	
@@ -56,18 +56,47 @@ func hex_from_normalized_pos(pos: Vector2) -> Hex:
 	return hex_from_row_and_col(row, col)
 	
 	
-func bullcrap_local(cube: Vector3):
-	var x = 1.5 * cube.x + 1 # offset to center
-	var y = SQRT_3 * (cube.x / 2 + cube.z + 1) # offset to center
-	
-	var cx = x / 1.5 - 1
-	var cz = y / SQRT_3 - cx / 2.0 - 1
-	
 func hex_from_row_and_col(row: int, col: int) -> Hex:
 	if col < 0 or row < 0 or row >= _hexes.size() or col >= _hexes[row].size():
 		return null
 	
 	return _hexes[row][col]
+	
+	
+func line_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
+	var result = []
+	
+	var previous = null
+	
+	for point in _points_for_line_calculation(first_pos, second_pos):
+		var current = hex_from_normalized_pos(point)
+		
+		if previous != current:
+			result.append(current)
+			previous = current
+	
+	return result
+	
+	
+func _points_for_line_calculation(first: Vector2, second: Vector2) -> Array:
+	var h1 = hex_from_normalized_pos(first)
+	var h2 = hex_from_normalized_pos(second)
+	
+	if h1 == null or h2 == null:
+		return []
+		
+	var precision_factor = 1.5
+		
+	var count = h1.distance_to(h2) + 1
+	count *= precision_factor
+	
+	var delta = (second - first) / count
+	var result = []
+	
+	for index in range(count + 1):
+		result.append(first + delta * index)
+		
+	return result
 	
 	
 ### ITERATOR ###

@@ -40,7 +40,7 @@ func _process(delta):
 		
 		if selected != null:
 			$Indicator.position = selected.get_normalized_2d_pos() * visualizer.half_width * 2.0
-			$Label.text = str(selected.get_multiplied_2d_edges(visualizer.half_width * 2)) #str($Indicator.position)
+			$Label.text = str(selected.get_multiplied_2d_corners(visualizer.half_width * 2)) #str($Indicator.position)
 	
 	
 	pass
