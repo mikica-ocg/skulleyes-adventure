@@ -21,16 +21,20 @@ func get_even_row_coords():
 	
 func get_normalized_2d_pos():
 	var x = 1.5 * _coords.x + 1 # offset to center
-	var y = SQRT3 * (_coords.x / 2 + _coords.z) + SQRT3 # offset to center
+	var y = SQRT3 * (_coords.x / 2 + _coords.z + 1) # offset to center
 	
 	return Vector2(x, y)
 	
 	
 func get_normalized_2d_edges() -> Array:
-	var width_extent = 0.5
-	var height_extent = SQRT3 / 2.0
+	return get_multiplied_2d_edges(1)
 	
-	var pos_offset = get_normalized_2d_pos()
+	
+func get_multiplied_2d_edges(size: float) -> Array:
+	var width_extent = 0.5 * size
+	var height_extent = SQRT3 / 2.0 * size
+	
+	var pos_offset = get_normalized_2d_pos() * size
 	
 	return [
 		Vector2(-width_extent, -height_extent) + pos_offset,

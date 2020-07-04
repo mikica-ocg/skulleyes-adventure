@@ -43,11 +43,8 @@ func normalized_size() -> Vector2:
 	
 	
 func hex_from_normalized_pos(pos: Vector2) -> Hex:
-	var q_offset = 1
-	var r_offset = 0.75
-	
-	var q = 2.0/3.0 * pos.x - q_offset
-	var r = -1.0/3.0 * pos.x + SQRT_3 / 3 * pos.y - r_offset
+	var q = 2.0/3.0 * (pos.x - 1)
+	var r = pos.y / SQRT_3 - q / 2.0 - 1
 	
 	var cube_raw = Hex.axial_to_cube_coords(q, r)
 	var cube = Hex.round_cube_coords(cube_raw)
@@ -58,6 +55,13 @@ func hex_from_normalized_pos(pos: Vector2) -> Hex:
 	
 	return hex_from_row_and_col(row, col)
 	
+	
+func bullcrap_local(cube: Vector3):
+	var x = 1.5 * cube.x + 1 # offset to center
+	var y = SQRT_3 * (cube.x / 2 + cube.z + 1) # offset to center
+	
+	var cx = x / 1.5 - 1
+	var cz = y / SQRT_3 - cx / 2.0 - 1
 	
 func hex_from_row_and_col(row: int, col: int) -> Hex:
 	if col < 0 or row < 0 or row >= _hexes.size() or col >= _hexes[row].size():

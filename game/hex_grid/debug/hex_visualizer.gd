@@ -49,16 +49,8 @@ func draw_hex(hex: Hex, half_width: int, selected: bool):
 	
 	var size = half_width + half_width
 	
+	var offsets = hex.get_multiplied_2d_edges(size)
 	var pos_offset = hex.get_normalized_2d_pos() * size
-	
-	var offsets = [
-		Vector2(-dw, -dh) + pos_offset,
-		Vector2(dw, -dh) + pos_offset,
-		Vector2(2 * dw, 0) + pos_offset,
-		Vector2(dw, dh) + pos_offset,
-		Vector2(-dw, dh) + pos_offset,
-		Vector2(-2 * dw, 0) + pos_offset
-	]
 	
 	if selected:
 		draw_polygon(offsets, [Color(72.0/255, 106.0/255, 71.0/255, 0.5)])
