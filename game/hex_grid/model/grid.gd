@@ -64,19 +64,30 @@ func hex_from_row_and_col(row: int, col: int) -> Hex:
 	
 	
 func line_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
+	return line_from_normalized_with_origin_hex(
+		hex_from_normalized_pos(first_pos), 
+		first_pos, 
+		second_pos
+	)
+	
+func line_from_normalized_with_origin_hex(origin: Hex, first_pos: Vector2, second_pos: Vector2) -> Array:
 	var result = []
 	
 	var previous = null
+	var current_distance = 0
+	
+	if origin == null:
+		return []
 	
 	for point in _points_for_line_calculation(first_pos, second_pos):
 		var current = hex_from_normalized_pos(point)
 		
-		if previous != current:
+		if previous != current and current != null and current.distance_to(origin) > current_distance:
 			result.append(current)
 			previous = current
+			current_distance += 1
 	
 	return result
-	
 	
 func _points_for_line_calculation(first: Vector2, second: Vector2) -> Array:
 	var h1 = hex_from_normalized_pos(first)
