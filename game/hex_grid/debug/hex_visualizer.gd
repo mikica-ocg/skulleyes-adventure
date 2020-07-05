@@ -118,6 +118,16 @@ func draw_los(origin: Vector2, selected: Hex):
 		
 	for point in grid._points_for_line_calculation(origin / size, selected.get_normalized_2d_pos()):
 		draw_center(point * size, Color.red, 4)
+		
+	var intersecting_edges = grid.intersecting_edges_from_normalized(origin/size, selected.get_normalized_2d_pos())
+	
+	if intersecting_edges.size() > 1:
+		for index in range(0, intersecting_edges.size() - 1, 2):
+			draw_line(
+				intersecting_edges[index] * size, 
+				intersecting_edges[index + 1] * size, 
+				Color.green,
+				3)
 
 
 func draw_center(position: Vector2, color: Color, radius: float):

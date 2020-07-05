@@ -63,6 +63,48 @@ func hex_from_row_and_col(row: int, col: int) -> Hex:
 	return _hexes[row][col]
 	
 	
+func intersecting_edges_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
+	var result = []
+	
+	var line = line_from_normalized(first_pos, second_pos)
+	
+	line.push_front(hex_from_normalized_pos(first_pos))
+	
+	for elem in line:
+		var hex = elem as Hex
+		
+		var corners = hex.get_normalized_2d_corners()
+		
+		for index in range(0, corners.size(), 2):
+			var start_point = corners[index]
+			var end_point = corners[index + 1]
+			
+			if _are_intersecting(first_pos, second_pos, start_point, end_point):
+				result.append(start_point)
+				result.append(end_point)
+		
+		
+	
+	return result
+	
+	
+func _are_intersecting(line_1_a: Vector2, line_1_b: Vector2, line_2_c: Vector2, line_2_d: Vector2) -> bool:
+	var acd = _are_points_counterclockwise(line_1_a, line_2_c, line_2_d)
+	var bcd = _are_points_counterclockwise(line_1_b, line_2_c, line_2_d)
+	
+	var abc = _are_points_counterclockwise(line_1_a, line_1_b, line_2_c)
+	var abd = _are_points_counterclockwise(line_1_a, line_1_b, line_2_d)
+	
+	return acd != bcd and abc != abd
+	
+	
+func _are_points_counterclockwise(a: Vector2, b: Vector2, c: Vector2) -> bool:
+	var slope_1 = (c.y - a.y) * (b.x - a.x)
+	var slope_2 = (b.y - a.y) * (c.x - a.x)
+	
+	return slope_1 >= slope_2
+	
+	
 func line_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
 	return line_from_normalized_with_origin_hex(
 		hex_from_normalized_pos(first_pos), 
