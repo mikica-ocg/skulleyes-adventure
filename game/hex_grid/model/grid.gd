@@ -89,20 +89,8 @@ func intersecting_edges_from_normalized(first_pos: Vector2, second_pos: Vector2)
 	
 	
 func _are_intersecting(line_1_a: Vector2, line_1_b: Vector2, line_2_c: Vector2, line_2_d: Vector2) -> bool:
-	var acd = _are_points_counterclockwise(line_1_a, line_2_c, line_2_d)
-	var bcd = _are_points_counterclockwise(line_1_b, line_2_c, line_2_d)
-	
-	var abc = _are_points_counterclockwise(line_1_a, line_1_b, line_2_c)
-	var abd = _are_points_counterclockwise(line_1_a, line_1_b, line_2_d)
-	
-	return acd != bcd and abc != abd
-	
-	
-func _are_points_counterclockwise(a: Vector2, b: Vector2, c: Vector2) -> bool:
-	var slope_1 = (c.y - a.y) * (b.x - a.x)
-	var slope_2 = (b.y - a.y) * (c.x - a.x)
-	
-	return slope_1 >= slope_2
+	return EdgeIntersectionDetector.are_intersecting(
+		line_1_a, line_1_b, line_2_c, line_2_d)
 	
 	
 func line_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
@@ -150,6 +138,57 @@ func _points_for_line_calculation(first: Vector2, second: Vector2) -> Array:
 		result.append(first + delta * index)
 		
 	return result
+	
+	
+class EdgeIntersectionDetector:
+	
+	enum ORIENTATION {
+		colinear,
+		clockwise,
+		counterclockwise
+	}
+	
+	static func are_intersecting(
+		line_1_a: Vector2, line_1_b: Vector2, 
+		line_2_c: Vector2, line_2_d: Vector2) -> bool:
+		
+		var o1 = _orientation(line_1_a, line_1_b, line_2_c)
+		var o2 = _orientation(line_1_a, line_1_b, line_2_d)
+		var o3 = _orientation(line_2_c, line_2_d, line_1_a)
+		var o4 = _orientation(line_2_c, line_2_d, line_1_b)
+		
+		if o1 != o2 and o3 != o4:
+			return true
+			
+		if o1 == ORIENTATION.colinear and _colinear_on_segment(line_1_a, line_1_b, line_2_c):
+			return true
+			
+		if o2 == ORIENTATION.colinear and _colinear_on_segment(line_1_a, line_1_b, line_2_d):
+			return true
+			
+		if o3 == ORIENTATION.colinear and _colinear_on_segment(line_2_c, line_2_d, line_1_a):
+			return true
+			
+		if o4 == ORIENTATION.colinear and _colinear_on_segment(line_2_c, line_2_d, line_1_b):
+			return true
+		
+		return false
+		
+	static func _orientation(p: Vector2, q: Vector2, r: Vector2) -> int:
+		var val = ((q.y - p.y) * (r.x - q.x)) - ((q.x - p.x) * (r.y - q.y))
+		
+		if val > 0:
+			return ORIENTATION.clockwise
+		if val < 0:
+			return ORIENTATION.counterclockwise
+		
+		return ORIENTATION.colinear
+	
+	static func _colinear_on_segment(start: Vector2, end: Vector2, point: Vector2) -> bool:
+		var x_is_in = point.x <= max(start.x, end.x) and point.x >= min(start.x, end.x)
+		var y_is_in = point.y <= max(start.y, end.y) and point.y >= min(start.y, end.y)
+		
+		return x_is_in and y_is_in
 	
 	
 ### ITERATOR ###
