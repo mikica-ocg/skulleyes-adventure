@@ -43,10 +43,7 @@ func normalized_size() -> Vector2:
 	
 	
 func hex_from_normalized_pos(pos: Vector2) -> Hex:
-	var q = 2.0/3.0 * (pos.x - 1)
-	var r = pos.y / SQRT_3 - q / 2.0 - 1
-	
-	var cube_raw = Hex.axial_to_cube_coords(q, r)
+	var cube_raw = _to_raw_cube_coords(pos)
 	var cube = Hex.round_cube_coords(cube_raw)
 	var even_row = Hex.cube_to_even_row_coords(cube)
 	
@@ -54,6 +51,12 @@ func hex_from_normalized_pos(pos: Vector2) -> Hex:
 	var col = int(even_row.x)
 	
 	return hex_from_row_and_col(row, col)
+	
+	
+func _to_raw_cube_coords(pos: Vector2) -> Vector3:
+	var q = 2.0/3.0 * (pos.x - 1)
+	var r = pos.y / SQRT_3 - q / 2.0 - 1
+	return Hex.axial_to_cube_coords(q, r)
 	
 	
 func hex_from_row_and_col(row: int, col: int) -> Hex:
@@ -74,8 +77,9 @@ func intersecting_edges_from_normalized(first_pos: Vector2, second_pos: Vector2)
 		var hex = elem as Hex
 		
 		var corners = hex.get_normalized_2d_corners()
+		corners.append(corners[0])
 		
-		for index in range(0, corners.size(), 2):
+		for index in range(corners.size() - 1):
 			var start_point = corners[index]
 			var end_point = corners[index + 1]
 			
@@ -142,6 +146,8 @@ func _points_for_line_calculation(first: Vector2, second: Vector2) -> Array:
 	
 class EdgeIntersectionDetector:
 	
+	const EPSILON = 0.00001
+	
 	enum ORIENTATION {
 		colinear,
 		clockwise,
@@ -177,9 +183,9 @@ class EdgeIntersectionDetector:
 	static func _orientation(p: Vector2, q: Vector2, r: Vector2) -> int:
 		var val = ((q.y - p.y) * (r.x - q.x)) - ((q.x - p.x) * (r.y - q.y))
 		
-		if val > 0:
+		if val > EPSILON:
 			return ORIENTATION.clockwise
-		if val < 0:
+		if val < -EPSILON:
 			return ORIENTATION.counterclockwise
 		
 		return ORIENTATION.colinear
