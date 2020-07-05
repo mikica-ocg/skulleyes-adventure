@@ -29,7 +29,8 @@ func _input(event):
 		if hex != selected:
 			selected = hex
 			update()
-		
+			
+		debug_label.text = "cube = " + str(grid._to_raw_cube_coords(local_mouse_pos / (2 * half_width)))
 #		debug_label.text = "Mouse pos: " + str(local_mouse_pos)
 		
 		pass
@@ -128,6 +129,11 @@ func draw_los(origin: Vector2, selected: Hex):
 				intersecting_edges[index + 1] * size, 
 				Color.green,
 				3)
+				
+	for corner in grid.intersecting_corners_from_normalized(origin / size, selected.get_normalized_2d_pos()):
+		draw_circle(corner * size, 6, Color.yellow)
+		
+	print(str(grid.intersecting_corners_from_normalized(origin / size, selected.get_normalized_2d_pos())))
 
 
 func draw_center(position: Vector2, color: Color, radius: float):

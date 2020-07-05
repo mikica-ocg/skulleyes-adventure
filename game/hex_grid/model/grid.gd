@@ -1,6 +1,7 @@
 class_name HexGrid
 
 const SQRT_3 = sqrt(3)
+const EPSILON = 0.00001
 
 var _hexes: Array
 	
@@ -71,7 +72,10 @@ func intersecting_edges_from_normalized(first_pos: Vector2, second_pos: Vector2)
 	
 	var line = line_from_normalized(first_pos, second_pos)
 	
-	line.push_front(hex_from_normalized_pos(first_pos))
+	var first_hex = hex_from_normalized_pos(first_pos)
+	
+	if first_hex != null:
+		line.push_front(first_hex)
 	
 	for elem in line:
 		var hex = elem as Hex
@@ -86,8 +90,6 @@ func intersecting_edges_from_normalized(first_pos: Vector2, second_pos: Vector2)
 			if _are_intersecting(first_pos, second_pos, start_point, end_point):
 				result.append(start_point)
 				result.append(end_point)
-		
-		
 	
 	return result
 	
@@ -97,12 +99,64 @@ func _are_intersecting(line_1_a: Vector2, line_1_b: Vector2, line_2_c: Vector2, 
 		line_1_a, line_1_b, line_2_c, line_2_d)
 	
 	
+func intersecting_corners_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
+	var result = []
+	
+	var line = line_from_normalized(first_pos, second_pos)
+	
+	var first_hex = hex_from_normalized_pos(first_pos)
+	
+	if first_hex != null:
+		line.push_front(first_hex)
+	
+	var epsilon_vector = Vector2(EPSILON, EPSILON)
+	
+	for elem in line:
+		var hex = elem as Hex
+		
+		var corners = hex.get_normalized_2d_corners()
+		
+		for corner in corners:
+			if _is_point_on_segment(first_pos, second_pos, corner):
+				if not _is_corner_already_added(result, corner):
+					result.append(corner)
+		
+	return result
+	
+func _is_point_on_segment(seg_start: Vector2, seg_end: Vector2, point: Vector2) -> bool:
+	var first = seg_end - seg_start
+	var second = point - seg_start
+
+	var cp = first.cross(second)
+	
+	if cp > EPSILON or cp < -EPSILON:
+		return false
+	
+	var dp = first.dot(second)
+
+	if dp < -EPSILON:
+		return false
+
+	return dp < (seg_end - seg_start).length_squared()
+	
+	
+func _is_corner_already_added(corners: Array, corner: Vector2) -> bool:
+	for c in corners:
+		var matched_x = corner.x <= c.x + EPSILON and corner.x >= c.x - EPSILON
+		var matched_y = corner.y <= c.y + EPSILON and corner.y >= c.y - EPSILON
+		
+		if matched_x and matched_y:
+			return true
+	
+	return false
+	
 func line_from_normalized(first_pos: Vector2, second_pos: Vector2) -> Array:
 	return line_from_normalized_with_origin_hex(
 		hex_from_normalized_pos(first_pos), 
 		first_pos, 
 		second_pos
 	)
+	
 	
 func line_from_normalized_with_origin_hex(origin: Hex, first_pos: Vector2, second_pos: Vector2) -> Array:
 	var result = []
@@ -122,6 +176,7 @@ func line_from_normalized_with_origin_hex(origin: Hex, first_pos: Vector2, secon
 			current_distance += 1
 	
 	return result
+	
 	
 func _points_for_line_calculation(first: Vector2, second: Vector2) -> Array:
 	var h1 = hex_from_normalized_pos(first)
@@ -145,8 +200,6 @@ func _points_for_line_calculation(first: Vector2, second: Vector2) -> Array:
 	
 	
 class EdgeIntersectionDetector:
-	
-	const EPSILON = 0.00001
 	
 	enum ORIENTATION {
 		colinear,
@@ -205,11 +258,14 @@ func _iter_init(_arg) -> bool:
 	iterator = GridIterator.new(_hexes)
 	return iterator._iter_init(_arg)
 	
+	
 func _iter_next(_arg) -> bool:
 	return iterator._iter_next(_arg)
 	
+	
 func _iter_get(_arg) -> Hex:
 	return iterator._iter_get(_arg)
+	
 
 class GridIterator:
 	var _hexes: Array
